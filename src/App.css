@@ -1,0 +1,277 @@
+/*
+  color   redular   lighter
+  yellow: #cca707   #fed93f
+  green:  #00a74a   #13ff7c
+  blue:   #094a8f   #6bb3fd
+  red:    #9f0f17   #ff4c4c
+*/
+
+* {
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+html {
+  font-size: 15px;
+}
+
+body {
+  overflow: hidden;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #201C1C;
+  color: #FFFFFF;
+  user-select: none;
+}
+
+#app {
+  overflow: hidden;
+}
+
+svg {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+}
+
+#header-logo {
+  display: inline-block;
+  position: fixed;
+  right: 1.5em;
+  top: 1.5em;
+  height: 3em;
+  width: 5em;
+}
+
+#footer-copyright {
+  display: inline-block;
+  position: fixed;
+  left: 1.5em;
+  bottom: 1.5em;
+}
+
+#footer-logo {
+  position: fixed;
+  right: 1.5em;
+  bottom: .25em;
+  height: 5em;
+  width: auto;
+}
+
+#button-container {
+  position: absolute;
+  bottom: 20vh;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#button-container .button {
+  flex: none;
+  margin: 2rem;
+  height: 15vw;
+  width: 15vw;
+  border: 1px solid #383637;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: relative;
+}
+
+#start-button {
+  font-size: 5vw;
+  border: .5rem solid #FFFFFF !important;
+}
+
+#start-button:hover {
+  border-color: #00a74a !important;
+  color: #00a74a;
+}
+
+#button-0 {
+  top: 3rem;
+  background-color: #cca707;
+}
+
+#button-0[on="true"] {
+  background-color: #fed93f;
+  box-shadow: 0 0 25px 5px #cca707;
+}
+
+#button-1 {
+  top: -3rem;
+  background-color: #00a74a;
+}
+
+#button-1[on="true"] {
+  background-color: #13ff7c;
+  box-shadow: 0 0 25px 5px #00a74a;
+}
+
+#button-2 {
+  top: -3rem;
+  background-color: #094a8f;
+}
+
+#button-2[on="true"] {
+  background-color: #6bb3fd;
+  box-shadow: 0 0 15px 10px #094a8f;
+}
+
+#button-3 {
+  top: 3rem;
+  background-color: #9f0f17;
+}
+
+#button-3[on="true"] {
+  background-color: #ff4c4c;
+  box-shadow: 0 0 15px 15px #9f0f17;
+}
+
+#pattern-view-container {
+  position: absolute;
+  top: 25vh;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+#pattern-view-container .pattern-spot {
+  display: flex;
+  border: .25rem solid #FFFFFF;
+  border-radius: 50%;
+  height: 3vw;
+  width: 3vw;
+  align-items: center;
+  justify-content: center;
+  margin: 3px;
+  font-weight: bold;
+}
+
+#pattern-view-container .current-turn.computer {
+  border-color: #ff4c4c;
+}
+
+#pattern-view-container .current-place.computer {
+  background-color: #ff4c4c;
+}
+
+#pattern-view-container .current-turn {
+  border-color: #00a74a;
+}
+
+#pattern-view-container .current-place {
+  background-color: #00a74a;
+}
+
+#buttons-container {
+  display: flex;
+  flex-flow: column nowrap;
+  position: absolute;
+  right: 1rem;
+  top: 30%;
+  z-index: 99;
+}
+
+#end-game-icon {
+  height: 5rem;
+  width: 5rem;
+  cursor: pointer;
+  color: #FFFFFF;
+  margin: .5rem 0;
+}
+
+#end-game-icon:hover {
+  color: #ff4c4c;
+}
+
+#settings-icon {
+  height: 5rem;
+  width: 5rem;
+  cursor: pointer;
+  color: #FFFFFF;
+  margin: .5rem 0;
+}
+
+#settings-icon:hover {
+  color: #00a74a;
+}
+
+#settings-container {
+  position: absolute;
+  display: flex;
+  flex-flow: column nowrap;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: .25rem solid #ffffff;
+  z-index: 100;
+  background-color: #383637;
+  padding: 0 1rem 1rem;
+}
+
+#settings-header {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0 0 .5rem;
+}
+
+#settings-title {
+  flex: 1;
+}
+
+#settings-close {
+  flex: none;
+  color: #ff4c4c;
+  cursor: pointer;
+}
+
+#adjust-pattern-size-container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin: 0;
+}
+
+#adjust-pattern-up,
+#adjust-pattern-down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  margin: .25rem 0;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  border: .25rem solid #FFFFFF;
+}
+
+#pattern-length {
+  margin: .25rem .5rem;
+  font-size: 40px;
+}
+
+#adjust-pattern-label {
+  flex: auto;
+  margin-right: 2.5rem;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+#winner {
+  position: fixed;
+  font-size: 7vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
