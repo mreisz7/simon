@@ -1,1 +1,0 @@
-A Free Code Camp Project based on the game Simon
